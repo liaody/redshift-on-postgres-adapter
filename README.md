@@ -17,7 +17,7 @@ In Rails 5 the PostgreSQL database adapter is built in. This gem tries to use th
 ### Changes
 
 0.1.1:
-* Support primary keys (serial) in DB creation
+* Support auto incrementing primary keys in DB creation
 
 0.1.0:
 * Original Version

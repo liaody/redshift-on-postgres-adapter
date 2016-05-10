@@ -28,7 +28,7 @@ class ActiveRecord::ConnectionAdapters::RedshiftAdapter < ActiveRecord::Connecti
   ADAPTER_NAME = 'Redshift'.freeze
 
   NATIVE_DATABASE_TYPES = ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::NATIVE_DATABASE_TYPES.merge({
-    primary_key: "bigint primary key",
+    primary_key: "bigint primary key identity(1,1)",
   })
 
   def initialize(connection, logger, connection_parameters, config)
