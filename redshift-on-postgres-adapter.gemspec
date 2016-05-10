@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
  s.email       = 'liaody@gmail.com'
  s.files       = %w[lib/active_record/connection_adapters/redshift_adapter.rb lib/active_record/tasks/redshift_database_tasks.rb]
  s.require_path = 'lib'
- s.homepage    = 'http://github.com/liaody'
+ s.homepage    = 'https://github.com/liaody/redshift-on-postgres-adapter'
  s.add_dependency "pg"
  s.add_dependency "activerecord"
 end

@@ -27,6 +27,10 @@ end
 class ActiveRecord::ConnectionAdapters::RedshiftAdapter < ActiveRecord::ConnectionAdapters::PostgreSQLAdapter
   ADAPTER_NAME = 'Redshift'.freeze
 
+  NATIVE_DATABASE_TYPES = ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::NATIVE_DATABASE_TYPES.merge({
+    primary_key: "bigint primary key",
+  })
+
   def initialize(connection, logger, connection_parameters, config)
     super
   end
@@ -66,7 +70,12 @@ class ActiveRecord::ConnectionAdapters::RedshiftAdapter < ActiveRecord::Connecti
   end
 
   def postgresql_version
+    # Hack to avoid native PostgreQLAdapter's version check
     return 100000 + 80002
+  end
+
+  def native_database_types #:nodoc:
+    NATIVE_DATABASE_TYPES
   end
 
   def supports_statement_cache?
