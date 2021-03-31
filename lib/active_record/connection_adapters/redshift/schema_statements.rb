@@ -2,7 +2,7 @@
 module ActiveRecord::ConnectionAdapters
   module Redshift
     class SchemaCreation < PostgreSQL::SchemaCreation
-      ENCODING_TYPES = %w[RAW BYTEDICT DELTA DELTA32K LZO MOSTLY8 MOSTLY16 MOSTLY32 RUNLENGTH TEXT255 TEXT32K]
+      ENCODING_TYPES = %w[RAW AZ64 BYTEDICT DELTA DELTA32K LZO MOSTLY8 MOSTLY16 MOSTLY32 RUNLENGTH TEXT255 TEXT32K ZSTD]
 
       def column_options(o)
         column_options = super
